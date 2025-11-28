@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>"La Palapa" - App Oficial</title>
+
+<style>
+
+    body { 
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #f2f2f2;
+        padding-bottom: 80px;
+    }
+
+    header {
+        text-align: center;
+        padding: 18px;
+        background: #ffffffee;
+        font-size: 22px;
+        font-weight: bold;
+        border-bottom: 3px solid #00948c;
+    }
+
+    .container {
+        max-width: 480px;
+        margin: auto;
+        padding: 10px;
+    }
+
+    /* BOTONES PRINCIPALES */
+    .grid-buttons {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        margin-bottom: 15px;
+    }
+
+    .app-button {
+        background: #ffffffcb;
+        padding: 12px;
+        border-radius: 12px;
+        border: 2px solid #046392;
+        font-size: 14px;
+        text-align: center;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+    .app-button:hover { background: #dff6ff; }
+
+    /* TARJETAS */
+    .card {
+        background: white;
+        padding: 15px;
+        margin: 18px 0;
+        border-radius: 12px;
+        border: 1.8px solid #00948c;
+    }
+
+    h2 {
+        text-align: center;
+        color: #e78208;
+    }
+
+   
+    .menu-item img {
+        width: 75px;
+        height: 75px;
+        border-radius: 10px;
+        margin-right: 12px;
+        object-fit: cover;
+    }
+
+    .menu-item h3 {
+        font-size: 15px;
+        margin: 0;
+    }
+
+    footer {
+        text-align: center;
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    /* BARRA INFERIOR */
+    .bottom-bar {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background: #ffffffee;
+        border-top: 2px solid #00948c;
+        padding: 8px 0;
+        display: flex;
+        justify-content: space-around;
+        z-index: 999;
+    }
+
+    .bottom-btn {
+        text-align: center;
+        font-size: 13px;
+        cursor: pointer;
+    }
+
+    .bottom-btn span {
+        font-size: 22px;
+        display: block;
+   }
+
+    .modal-content img {
+        width: 100%;
+        border-radius: 10px;
+    }
+
+    .close-btn {
+        margin-top: 10px;
+        padding: 10px;
+        background: #00948c;
+        color: white;
+        border: none;
+        width: 100%;
+        border-radius: 8px;
+        font-size: 16px;
+    }
+
+</style>
+</head>
+
+<body>
+
+<header>🍽 La Palapa - App Oficial 🍽</header>
+
+<div class="container">
+
+    <!-- BOTONES -->
+    <div class="grid-buttons">
+        <div class="app-button" onclick="scrollToSection('menu')">📋 Menú</div>
+        <div class="app-button" onclick="scrollToSection('galeria')">🖼 Galería</div>
+        <div class="app-button" onclick="scrollToSection('reviews')">⭐ Opiniones</div>
+        <div class="app-button" onclick="scrollToSection('reservas')">📅 Reservas</div>
+        <div class="app-button" onclick="scrollToSection('pedidos')">🛵 Pedidos</div>
+        <div class="app-button" onclick="scrollToSection('contacto')">☎ Contacto</div>
+    </div>
+
+    <!-- MENÚ -->
+    <section id="menu" class="card">
+        <h2>Menú con Imágenes</h2>
+
+        <!-- Cambia las imágenes por tus propias URLs -->
+        <div class="menu-item">
+            <img src="C:\Users\eliza\OneDrive\Desktop\app\1.jpg">
+            <h3>  MENU 1</h3>
+        </div>
+
+        <div class="menu-item">
+            <img src="C:\Users\eliza\OneDrive\Desktop\app\2.jpg">
+            <h3>  MENU 2</h3>
+        </div>
+
+        <div class="menu-item">
+            <img src="C:\Users\eliza\OneDrive\Desktop\app\3.jpg">
+            <h3>  MENU 3</h3>
+        </div>
+
+        <div class="menu-item">
+            <img src="C:\Users\eliza\OneDrive\Desktop\app\4.jpg">
+            <h3>  MENU 4</h3>
+        </div>
+
+        <div class="menu-item">
+            <img src="C:\Users\eliza\OneDrive\Desktop\app\5.jpg">
+            <h3>  MENU 5</h3>
+        </div>
+
+    </section>
+
+
+    <!-- OPINIONES -->
+    <section id="reviews" class="card">
+        <h2>Opiniones</h2>
+        ⭐⭐⭐⭐⭐  
+        <button onclick="alert('Gracias por tu opinión ')">Dejar Opinión</button>
+    </section>
+
+    <!-- RESERVAS -->
+    <section id="reservas" class="card">
+        <h2>Reservar Mesa</h2>
+        <form>
+            <input type="text" placeholder="Nombre" required>
+            <input type="datetime-local" required>
+            <input type="number" min="1" max="4" placeholder="Personas" required>
+            <input type="number" min="1" max="4" placeholder="Mesas" required>
+            <button>Confirmar</button>
+        </form>
+    </section>
+
+    <!-- PEDIDOS -->
+    <section id="pedidos" class="card">
+        <h2>Hacer Pedido</h2>
+          <form id="pedidoForm">
+                <label>Nombre:</label>
+
+            <input type="text" placeholder="Nombre" required>
+             <label>Platillo:</label>
+                <select required>
+
+
+              <option value="">Selecciona</option>
+
+                     <option>Mixiote de puerco</option>
+                <option>Huevo a la mexicana con frijoles</option>
+                <option>Estrujado con frijoles</option>
+                <option>Torta con papas a la francesa</option>
+                <option>Milanesa con fruta</option>
+                <option>Bistec con pollo con espagueti y verdura</option>
+                <option>Torta de jamon</option>
+                <option>Chuleta de pollo con arroz y verduras</option>
+                <option>Tacos dorados con chile verde</option>
+                <option>Verdura con chiles rellenos</option>
+                <option>Chuleta de pollo con nopales y verdura</option>
+                <option>Patitas en salsa roja</option>
+                <option>Pescado frito con arroz y ensalda</option>
+                <option>Chuleta de pollo con ensalada</option>
+                <option>Enmoladas con milanesa</option>
+                <option>Mondongo</option>
+                <option>Salchipapas con nuggets</option>
+                <option>Gorditas de frijol con huevo</option>
+                <option>Gorditas</option>
+                <option>Tacos dorados en salsa roja </option>
+                <option>Sopes con bistec de pollo</option>
+                <option>Estrujada (gorda con manteca, salsa, aguacate, queso y frijoles)</option>
+                <option>Gorditas de frijol (con salsa, repollo, aguacate y queso)</option>
+                <option>Pechugas rellenas (jamón, queso amarillo y de hebra) </option>
+                <option>Fajitas de pollo y frutas </option>
+                <option>Milanesa de pollo, verduras y espagueti rojo</option>
+                <option>Charola de antojitos con carnes y huevos hervidos</option>
+                <option>Tortas preparadas de milanesa</option>
+                <option>Sopes</option>
+                <option>Hamburguesa</option>
+                <option>Sopes con carne asada</option>
+
+                </select>
+
+
+            <textarea placeholder="Dirección" rows="3" required></textarea>
+            <button>Enviar Pedido</button>
+        </form>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto" class="card">
+        <h2>Contacto</h2>
+        <p>📍 Calle Xicoténcatl #34, Agua Fría</p>
+        <p>📞 746 101 8598</p>
+        <button onclick="window.location.href='tel:7461018598'">Llamar</button>
+    </section>
+
+    <footer>©2025 La Palapa | App Oficial</footer>
+</div>
+<!-- MODAL -->
+<div id="imgModal" class="modal">
+    <div class="modal-content">
+        <img id="modalImg" src="">
+        <h3 id="modalTitle"></h3>
+        <button class="close-btn" onclick="closeModal()">Cerrar</button>
+
+<!-- BARRA INFERIOR -->
+<div class="bottom-bar">
+    <div class="bottom-btn" onclick="scrollToSection('menu')"><span>📋</span>Menú</div>
+    <div class="bottom-btn" onclick="scrollToSection('pedidos')"><span>🛵</span>Pedido</div>
+    <div class="bottom-btn" onclick="scrollToSection('reservas')"><span>📅</span>Reserva</div>
+    <div class="bottom-btn" onclick="scrollToSection('contacto')"><span>☎</span>Contacto</div>
+</div>
+
+<script>
+function scrollToSection(id) {
+    document.getElementById(id).scrollIntoView({ behavior: "smooth" });
+ function openModal(imgUrl, title) {
+    document.getElementById("modalImg").src = imgUrl;
+    document.getElementById("modalTitle").innerText = title;
+    document.getElementById("imgModal").style.display = "flex";
+ 
+}
+
+
+function closeModal() {
+    document.getElementById("imgModal").style.display = "none";
+}
+}
+
+</script>
+
+</body>
+</html>     
